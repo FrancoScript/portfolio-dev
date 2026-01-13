@@ -1,0 +1,25 @@
+---
+interface Logo {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  logos?: Logo[];
+}
+
+const { logos = [] }: Props = Astro.props;
+---
+
+<div class="flex flex-wrap gap-4 mt-6">
+  {
+    logos.map((logo: Logo, index: number) => (
+      <img
+        src={logo.src}
+        alt={logo.alt}
+        class="h-12 w-12 transition transform duration-300 ease-out hover:translate-y-1"
+        loading="lazy"
+      />
+    ))
+  }
+</div>

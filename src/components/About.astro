@@ -1,0 +1,43 @@
+---
+import TechLogos from "./TechLogos.astro";
+
+const logos = [
+  { src: "/assets/html.png", alt: "HTML" },
+  { src: "/assets/css.png", alt: "CSS" },
+  { src: "/assets/js.png", alt: "JavaScript" },
+  { src: "/assets/react.png", alt: "React" },
+  { src: "/assets/node.png", alt: "Node.js" },
+  { src: "/assets/git.png", alt: "Git" },
+  { src: "/assets/tailwind.png", alt: "Tailwind" },
+  { src: "/assets/astro.png", alt: "Astro" },
+];
+---
+
+<section id="about" class="fade-up-delay-1 py-20 px-6 scroll-mt-24">
+  <h2 class="text-3xl text-center mb-12 text-primary font-bold">Sobre mi</h2>
+
+  <div class="flex flex-col md:flex-row gap-10 items-center justify-center">
+    <img
+      src="/profile.jpeg"
+      alt="Foto de perfil"
+      class="rounded-lg shadow-lg w-64 h-64 object-cover fade-up-delay-2"
+    />
+
+    <div class="max-w-xl fade-up-delay-3">
+      <p class="mb-4 text-dark">
+        Desarrollador web enfocado en la creación de interfaces modernas y
+        responsivas. Trabajo con HTML, CSS y JavaScript, utilizando herramientas
+        como React y Astro para construir aplicaciones claras, optimizadas y
+        fáciles de mantener. Me interesa especialmente el diseño adaptable, la
+        performance y la experiencia del usuario.
+      </p>
+
+      <p class="text-sm text-dark/70 mb-4">
+        <span class="font-bold text-slate-800"> Inglés:</span> nivel intermedio (lectura
+        de documentación técnica y comunicación básica).
+      </p>
+
+      <TechLogos logos={logos} />
+    </div>
+  </div>
+</section>

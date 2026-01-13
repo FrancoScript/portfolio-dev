@@ -1,11 +1,55 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Badge from "../components/Badge.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const projects = [
+  {
+    title: "Sitio web para negocio de Hojalateria",
+    desc: "Desarrollo de una página informativa para una empresa de hojalatería y fabricación de extractores eólicos. El proyectoincluye diseño responsive, optimización visual y pequeñasanimaciones con JavaScript para mejorar la presentación de los servicios.",
+    img: "/assets/projects/hojalateria-project.png",
+  },
+  {
+    title: "Chuck Norris Quote Generator",
+    desc: "Microproyecto que consume la API pública de Chuck Norris paramostrar frases aleatorias. Incluye diseño responsive, animacionesal cargar nuevas frases y manejo de eventos con JavaScript.",
+    img: "/assets/projects/chuck-api.png",
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="FranDev | Portfolio Web.">
+  <main>
+    <Hero />
+    <About />
+    <Services />
+    <section
+      id="portfolio"
+      class="fade-in max-w-5xl mx-auto px-6 py-16 fade-up-delay-1 scroll-mt-24"
+    >
+      <h2 class="text-3xl font-bold text-center mb-14 text-primary">
+        Portfolio
+      </h2>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 fade-up-delay-2"
+      >
+        {
+          projects.map((project) => (
+            <Portfolio
+              title={project.title}
+              desc={project.desc}
+              img={project.img}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <Contact />
+    <Footer />
+  </main>
+</BaseLayout>

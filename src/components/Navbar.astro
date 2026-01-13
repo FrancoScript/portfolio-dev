@@ -1,0 +1,52 @@
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="flex justify-between items-center px-4 py-4">
+    <!-- Logo -->
+    <div class="font-semibold text-lg text-slate-800">
+      Fran<span class="text-primary">Dev</span>
+    </div>
+
+    <button
+      id="menu-btn"
+      class="md:hidden text-slate-800 focus:outline-none"
+      aria-label="Abrir menú"
+    >
+      ☰
+    </button>
+
+    <ul class="hidden md:flex gap-6">
+      <li><a href="#about" class="hover:text-primary">Sobre mí</a></li>
+      <li><a href="#services" class="hover:text-primary">Servicios</a></li>
+      <li><a href="#portfolio" class="hover:text-primary">Portfolio</a></li>
+      <li><a href="#contact" class="hover:text-primary">Contacto</a></li>
+    </ul>
+  </div>
+
+  <ul
+    id="mobile-menu"
+    class="md:hidden
+    flex flex-col gap-4
+    px-6 pb-6
+    overflow-hidden
+    transition-all duration-300 ease-out
+    max-h-0 opacity-0"
+  >
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#services">Servicios</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+</nav>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  //btn? to avoid TS error if element not found
+
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("max-h-0");
+    menu?.classList.toggle("opacity-0");
+    menu?.classList.toggle("max-h-96");
+    menu?.classList.toggle("opacity-100");
+  });
+</script>
