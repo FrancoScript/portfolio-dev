@@ -1,6 +1,15 @@
 html {
   scroll-behavior: smooth;
 }
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Outfit", sans-serif;
+}
 
 .fade-up {
   opacity: 0;

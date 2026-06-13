@@ -5,15 +5,20 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#3b82f6',            // color principal
-				secondary: '#0ea5e9',          // color de acento o gradiente
-				background: '#f7f9fc',         // fondo general
-				backgroundAlt: '#e2e8f0',      // fondo secciones
-				text: '#1e293b',               // texto principal
-				textSecondary: '#475569',      // texto secundario
-				white: '#ffffff',              // blanco
-				border: '#cbd5e1',             // gris bordes
-				accent: "#f5a623"
+				primary: "#111827",
+				primaryDark: "#030712",
+
+				secondary: "#6b7280",
+
+				background: "#f3f4f6",
+				backgroundAlt: "#ffffff",
+
+				text: "#111827",
+				textSecondary: "#6b7280",
+
+				border: "#e5e7eb",
+
+				accent: "#22c55e",
 			},
 			keyframes: {
 				'fade-up-pop': {

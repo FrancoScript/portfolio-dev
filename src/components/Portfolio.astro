@@ -1,15 +1,54 @@
 ---
-const { title, desc, img } = Astro.props;
+interface Props {
+  title: string;
+  desc: string;
+  img: string;
+  technologies: string[];
+  demo: string;
+  github: string;
+}
+
+const { title, desc, img, technologies, demo, github }: Props = Astro.props;
 ---
 
 <div
-  class="bg-white rounded-xl overflow-hidden shadow-md border border-primary/10 transition-transform duration-300 hover:shadow-xl hover:scale-[1.03]"
+  class="bg-white rounded-xl overflow-hidden shadow-md border border-primary/10 transition-transform duration-300 hover:shadow-xl flex flex-col"
 >
   <img class="h-48 w-full object-cover" src={img} alt={title} />
-  <div class="p-4">
-    <h3 class="text-xl font-semibold text-secondary mb-2">{title}</h3>
+
+  <div class="p-4 flex flex-col flex-1">
+    <h3 class="text-xl font-semibold text-primary mb-2">
+      {title}
+    </h3>
+
     <p class="text-sm text-gray-600">
       {desc}
     </p>
+
+    <div class="flex flex-wrap gap-2 mt-4">
+      {
+        technologies.map((tech) => (
+          <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-md">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="flex gap-3 mt-auto pt-4">
+      <a
+        href={demo}
+        class="px-4 py-2 rounded-lg bg-primary text-white text-sm hover:bg-primaryDark"
+      >
+        Demo
+      </a>
+
+      <a
+        href={github}
+        class="px-4 py-2 rounded-lg border border-primary text-primary text-sm"
+      >
+        GitHub
+      </a>
+    </div>
   </div>
 </div>
